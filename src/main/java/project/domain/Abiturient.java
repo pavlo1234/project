@@ -1,7 +1,6 @@
 package project.domain;
 
 public class Abiturient {
-
 	private Integer id;
 	private Integer userId;
 	private Integer facultyId;

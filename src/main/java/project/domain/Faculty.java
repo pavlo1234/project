@@ -2,11 +2,24 @@ package project.domain;
 
 import java.util.List;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="faculty")
 public class Faculty {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
+	@Column
 	private String name;
+	
+	@Column
 	private int maxStudentCount;
+	
+	@ManyToMany
+	@JoinColumn(name="faculty_id")
 	private List<Subject> requiredSubjects;
 
 	public Faculty() {

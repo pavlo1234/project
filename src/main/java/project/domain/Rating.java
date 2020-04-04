@@ -1,9 +1,22 @@
 package project.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "rating")
 public class Rating {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+
+	@Column(name = "user_id")
 	private Integer userId;
+
+	@Column(name = "faculty_id")
 	private Integer facultyId;
+
+	@Column(name = "sum_marks")
 	private int sumMarks;
 
 	public Rating() {

@@ -9,22 +9,22 @@ public class Abiturient {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
-	@Column(name="user_id")
-	private Integer userId;
-	
-	@Column(name="faculty_id")
+
+	@Column(name = "username")
+	private String username;
+
+	@Column(name = "faculty_id")
 	private Integer facultyId;
-	
-	@Column(name="sum_marks")
+
+	@Column(name = "sum_marks")
 	private int sumMarks;
 
 	public Abiturient() {
 
 	}
 
-	public Abiturient(Integer userId, Integer facultyId, int sumMarks) {
-		this.userId = userId;
+	public Abiturient(String username, Integer facultyId, int sumMarks) {
+		this.username = username;
 		this.facultyId = facultyId;
 		this.sumMarks = sumMarks;
 	}
@@ -33,8 +33,8 @@ public class Abiturient {
 		return id;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public String getUsername() {
+		return username;
 	}
 
 	public Integer getFacultyId() {
@@ -49,8 +49,8 @@ public class Abiturient {
 		this.id = id;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public void setFacultyId(Integer facultyId) {

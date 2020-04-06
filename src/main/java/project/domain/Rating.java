@@ -10,8 +10,8 @@ public class Rating {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column(name = "user_id")
-	private Integer userId;
+	@Column(name = "username")
+	private String username;
 
 	@Column(name = "faculty_id")
 	private Integer facultyId;
@@ -23,8 +23,8 @@ public class Rating {
 
 	}
 
-	public Rating(Integer userId, Integer facultyId, int sumMarks) {
-		this.userId = userId;
+	public Rating(String username, Integer facultyId, int sumMarks) {
+		this.username = username;
 		this.facultyId = facultyId;
 		this.sumMarks = sumMarks;
 	}
@@ -33,8 +33,8 @@ public class Rating {
 		return id;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public String getUsername() {
+		return username;
 	}
 
 	public Integer getFacultyId() {
@@ -49,8 +49,8 @@ public class Rating {
 		this.id = id;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public void setFacultyId(Integer facultyId) {

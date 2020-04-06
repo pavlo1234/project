@@ -22,6 +22,10 @@ public class Subject {
 	public Subject() {
 
 	}
+	
+	public Subject(String name) {
+		this.name = name;
+	}
 
 	public Subject(String name, List<Faculty> faculties) {
 		this.name = name;

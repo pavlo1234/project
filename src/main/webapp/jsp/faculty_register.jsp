@@ -15,6 +15,7 @@
 <jsp:include page="bootstrap.jsp"></jsp:include>
 
 <title>Register to faculty</title>
+
 </head>
 <body>
 

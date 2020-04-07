@@ -1,18 +1,13 @@
 package project.dto;
 
-public class AbiturientDto {
+public class RatingDto {
 	private int id;
 	private String username;
 	private String facultyName;
-	private int sumMarks;
-	private int passingScore;
 
-	public AbiturientDto(int id, String username, String facultyName, int sumMarks, int passingScore) {
-		this.id = id;
+	public RatingDto(String username, String facultyName) {
 		this.username = username;
 		this.facultyName = facultyName;
-		this.sumMarks = sumMarks;
-		this.passingScore = passingScore;
 	}
 
 	public int getId() {
@@ -27,14 +22,6 @@ public class AbiturientDto {
 		return facultyName;
 	}
 
-	public int getSumMarks() {
-		return sumMarks;
-	}
-
-	public int getPassingScore() {
-		return passingScore;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -45,14 +32,6 @@ public class AbiturientDto {
 
 	public void setFacultyName(String facultyName) {
 		this.facultyName = facultyName;
-	}
-
-	public void setSumMarks(int sumMarks) {
-		this.sumMarks = sumMarks;
-	}
-
-	public void setPassingScore(int passingScore) {
-		this.passingScore = passingScore;
 	}
 
 }

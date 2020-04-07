@@ -9,18 +9,21 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
+
 	@Column
 	private String username;
-	
+
 	@Column
 	private String email;
-	
+
 	@Column
 	private String password;
-	
+
 	@Enumerated(EnumType.STRING)
 	private UserRole role;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private PhotoUser photoUser;
 
 	public User() {
 
@@ -44,7 +47,7 @@ public class User {
 		return id;
 	}
 
-	public String getUserName() {
+	public String getUsername() {
 		return username;
 	}
 
@@ -60,11 +63,15 @@ public class User {
 		return role;
 	}
 
+	public PhotoUser getPhotoUser() {
+		return photoUser;
+	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public void setuserName(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -78,6 +85,10 @@ public class User {
 
 	public void setRole(UserRole role) {
 		this.role = role;
+	}
+
+	public void setPhotoUser(PhotoUser photoUser) {
+		this.photoUser = photoUser;
 	}
 
 }

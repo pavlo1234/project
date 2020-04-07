@@ -4,6 +4,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -14,26 +16,38 @@
 </head>
 <body>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Username</th>
-				<th scope="col">Email</th>
-				<th scope="col">Faculty name</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${abiturients}" var="abiturient">
+	<jsp:include page="navbar.jsp"></jsp:include>
+
+	<div class="mx-5 mt-5">
+		<h1>Abiturients :</h1>
+		<table class="table">
+			<thead>
 				<tr>
-					<th scope="row">${abiturient.getId()}</th>
-					<td>${abiturient.getUsername()}</td>
-					<td>${abiturient.getFacultyName()}</td>
-					<td>${abiturient.getSumMarks()}</td>
+					<th scope="col">#</th>
+					<th scope="col">Username</th>
+					<th scope="col">Email</th>
+					<th scope="col">Faculty name</th>
+					<c:if test="${isAdmin}">
+						<th scope="col">Add to rating</th>
+					</c:if>
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<c:forEach items="${abiturients}" var="abiturient">
+					<tr>
+						<th scope="row">${abiturient.getId()}</th>
+						<td>${abiturient.getUsername()}</td>
+						<td>${abiturient.getFacultyName()}</td>
+						<td>${abiturient.getSumMarks()}</td>
+						<c:if test="${isAdmin}">
+							<td scope="col"><a
+								href="/addToRating?abiturientId=${abiturient.getId()}">Confirm</a></td>
+						</c:if>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 
 </body>
 </html>

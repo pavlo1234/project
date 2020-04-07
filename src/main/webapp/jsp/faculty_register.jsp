@@ -19,7 +19,11 @@
 </head>
 <body>
 
-	<form action="/addAbiturient" method="get" style="width: 500px;">
+	<jsp:include page="navbar.jsp"></jsp:include>
+	
+	<div class="mx-5 mt-5">
+		<h1>Please, put down your marks : </h1>
+		<form action="/addAbiturient" method="get" style="width: 800px;">
 		<input type="hidden" name="username"
 			value="<security:authentication property="principal.username"/>">
 		<input type="hidden" name="facultyId" value="${faculty.getId()}" />
@@ -29,9 +33,13 @@
 					type="number" class="form-control mark" max="12" min="1" required />
 			</div>
 		</c:forEach>
+		<input type="hidden" name="passingScoreOfFaculty" value="${faculty.getPassingScore()}"/>
 		<input type="hidden" class="sumMarks" name="sumMarks" />
 		<button type="button" class="btn btn-primary">Sign in</button>
 	</form>
+	</div>
+
+	
 
 
 	<script>
@@ -44,7 +52,8 @@
 				$.get("/addAbiturient", {
 					username : $("input[name='username']").val(),
 					facultyId : $("input[name='facultyId']").val(),
-					sumMarks : sum
+					sumMarks : sum,
+					passingScoreOfFaculty : $("input[name='passingScoreOfFaculty']").val()
 				}, function() {
 					alert("Success");
 				});

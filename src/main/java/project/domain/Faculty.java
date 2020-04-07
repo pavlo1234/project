@@ -18,6 +18,9 @@ public class Faculty {
 	@Column
 	private int maxStudentCount;
 	
+	@Column
+	private int passingScore;
+	
 	@ManyToMany
 	@JoinColumn(name="faculty_id")
 	private List<Subject> requiredSubjects;
@@ -39,6 +42,10 @@ public class Faculty {
 	public String getName() {
 		return name;
 	}
+	
+	public int getPassingScore() {
+		return passingScore;
+	}
 
 	public int getMaxStudentCount() {
 		return maxStudentCount;
@@ -54,6 +61,10 @@ public class Faculty {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void setPassingScore(int passingScore) {
+		this.passingScore = passingScore;
 	}
 
 	public void setMaxStudentCount(int maxStudentCount) {

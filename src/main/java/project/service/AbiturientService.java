@@ -21,5 +21,9 @@ public class AbiturientService {
 	public List<Abiturient> findAll() {
 		return abiturientRepo.findAll();
 	}
+
+	public Abiturient findById(Integer id) {
+		return abiturientRepo.getOne(id);
+	}
 	
 }

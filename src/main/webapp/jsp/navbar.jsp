@@ -1,3 +1,5 @@
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 	<a class="navbar-brand" href="#">Navbar</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -18,8 +20,9 @@
 	<form method="post" class="my-2 my-lg-0 form-inline" action="/logout">
 		<input type="hidden" name="${_csrf.parameterName}"
 			value="${_csrf.token}" />
-		<button type="submit"
-			
-			class="btn btn-primary">Log out</button>
+		<button type="submit" class="btn btn-primary">
+			<security:authorize access="!isAuthenticated()">Log in</security:authorize>
+			<security:authorize access="isAuthenticated()">Log out</security:authorize>
+		</button>
 	</form>
 </nav>

@@ -27,9 +27,9 @@
 					<th scope="col">Username</th>
 					<th scope="col">Email</th>
 					<th scope="col">Faculty name</th>
-					<c:if test="${isAdmin}">
+					<security:authorize access="hasRole('ROLE_ADMINISTRATOR')">
 						<th scope="col">Add to rating</th>
-					</c:if>
+					</security:authorize>
 				</tr>
 			</thead>
 			<tbody>
@@ -39,10 +39,9 @@
 						<td>${abiturient.getUsername()}</td>
 						<td>${abiturient.getFacultyName()}</td>
 						<td>${abiturient.getSumMarks()}</td>
-						<c:if test="${isAdmin}">
-							<td scope="col"><a
-								href="/addToRating?abiturientId=${abiturient.getId()}">Confirm</a></td>
-						</c:if>
+						<security:authorize access="hasRole('ROLE_ADMINISTRATOR')">
+							<td scope="col"><a href="/addToRating?abiturientId=${abiturient.getId()}">Confirm</a></td>
+						</security:authorize>
 					</tr>
 				</c:forEach>
 			</tbody>

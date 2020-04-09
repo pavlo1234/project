@@ -19,16 +19,16 @@
 	<jsp:include page="navbar.jsp"></jsp:include>
 
 	<div class="mx-5 mt-5">
-		<h1>Abiturients :</h1>
+		<h1><spring:message code="abiturients.heading"/> : </h1>
 		<table class="table">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Username</th>
-					<th scope="col">Email</th>
-					<th scope="col">Faculty name</th>
+					<th scope="col"><spring:message code="abiturients.username"/></th>
+					<th scope="col"><spring:message code="abiturients.facultyName"/></th>
+					<th scope="col"><spring:message code="abiturients.sumMarks"/></th>
 					<security:authorize access="hasRole('ROLE_ADMINISTRATOR')">
-						<th scope="col">Add to rating</th>
+						<th scope="col"><spring:message code="abiturients.adminButton"/></th>
 					</security:authorize>
 				</tr>
 			</thead>
@@ -40,7 +40,7 @@
 						<td>${abiturient.getFacultyName()}</td>
 						<td>${abiturient.getSumMarks()}</td>
 						<security:authorize access="hasRole('ROLE_ADMINISTRATOR')">
-							<td scope="col"><a href="/addToRating?abiturientId=${abiturient.getId()}">Confirm</a></td>
+							<td scope="col"><a href="/addToRating?abiturientId=${abiturient.getId()}"><spring:message code="abiturients.adminConfirmButton"/></a></td>
 						</security:authorize>
 					</tr>
 				</c:forEach>

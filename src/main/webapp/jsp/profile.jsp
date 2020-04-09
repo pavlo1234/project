@@ -22,6 +22,8 @@
 		<h1>Welcome, ${user.getUsername()}</h1>
 		<img src="${image}" class="rounded float-left">
 	</div>
+	
+	
 
 </body>
 </html>

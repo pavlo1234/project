@@ -22,7 +22,7 @@
 	<jsp:include page="navbar.jsp"></jsp:include>
 	
 	<div class="mx-5 mt-5">
-		<h1>Please, put down your marks : </h1>
+		<h1><spring:message code="faculty_register.heading"/> : </h1>
 		<form action="/addAbiturient" method="get" style="width: 800px;">
 		<input type="hidden" name="username"
 			value="<security:authentication property="principal.username"/>">
@@ -35,7 +35,7 @@
 		</c:forEach>
 		<input type="hidden" name="passingScoreOfFaculty" value="${faculty.getPassingScore()}"/>
 		<input type="hidden" class="sumMarks" name="sumMarks" />
-		<button type="button" class="btn btn-primary">Sign in</button>
+		<button type="button" class="btn btn-primary"><spring:message code="faculty_register.registerButton"/></button>
 	</form>
 	</div>
 

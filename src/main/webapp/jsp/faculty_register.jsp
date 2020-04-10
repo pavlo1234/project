@@ -21,7 +21,7 @@
 
 	<jsp:include page="navbar.jsp"></jsp:include>
 	
-	<div class="mx-5 mt-5">
+	<div style="margin: 100px 10%;">
 		<h1><spring:message code="faculty_register.heading"/> : </h1>
 		<form action="/addAbiturient" method="get" style="width: 800px;">
 		<input type="hidden" name="username"

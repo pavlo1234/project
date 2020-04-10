@@ -11,7 +11,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-	<a class="navbar-brand" href="#">Navbar</a>
+	<a class="navbar-brand" href="#">Selection_committee</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 		aria-expanded="false" aria-label="Toggle navigation">
@@ -49,26 +49,5 @@
 	</form>
 </nav>
 
-<script>
-	function load(lang) {
-		let href = window.location.href;
-
-		if (href.indexOf('?') == -1)
-			href += "?lang=" + lang;
-		else if (href.indexOf("?lang=ua") != -1)
-			href = href.replace("?lang=ua", "?lang=" + lang);
-		else if (href.indexOf("?lang=en") != -1)
-			href = href.replace("?lang=en", "?lang=" + lang);
-
-		if (href.indexOf("&lang=ua") != -1)
-			href = href.replace("&lang=ua", "&lang=" + lang);
-		else if (href.indexOf("&lang=en") != -1)
-			href = href.replace("&lang=en", "&lang=" + lang);
-		else
-			href += "&lang=" + lang;
-
-		window.location.href = href;
-
-	}
-</script>
+<script src="${pageContext.request.contextPath}/jsp/js/lang.js"></script>
 
